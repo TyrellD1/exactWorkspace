@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/e">Exact</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <% if(currentUser) { %> 
+          <li class="nav-link">
+            <button class="showButton mx-2 my-auto" type="button" data-bs-toggle="collapse" data-bs-target="#searchBar" aria-expanded="false" aria-controls="collapseExample">
+              New Group Chat
+            </button>
+          </li>
+          <li class="nav-link position-relative ms-5">
+            <div class="collapse collapseDiv" id="searchBar">
+                <div class="input-group mt-1">
+                  <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-search"></i></span>
+                  <input type="search" class="form-control" aria-label="Sizing example input" id="search" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <form id="newGroupChatForm" class="newGroupChatForm d-flex flex-column" action="/createGroupChat" method="POST">
+                    <div class="d-flex flex-column searchQueryResults">
+                    <% for(user of allUsers) { %> 
+                    <% if(currentUser.username !== user.username) { %> 
+                      <div class="form-check flex-column itemContainer">
+                          <label class="form-check-label searchResult" for="<%= user._id %>">
+                            <%= user.first %> <%= user.last %>    
+                          </label>
+                          
+                          <input class="form-check-input" type="checkbox" value="<%= user._id %>" name="members" id="<%= user._id %>">
+                      </div>
+                    <% } %> 
+                    <% } %> 
+                    </div>
+                    <hr>
+                    <div class="d-flex flex-row mx-auto">
+                      <label for="name">GroupChat Name</label>
+                      <input class="ms-2" type="text" name="name" id="name">
+                    </div>
+                    <hr>
+                    <div class="d-flex flex-column">
+                        <button class="btn btn-primary addToGroupButton my-auto mt-2">Add To Group</button>
+                    </div>
+                </form>
+            </div>
+            <script>
+                const filterFunc = () => {
+                    let input, filter, div, container, a, i;
+                    input = document.querySelector("#search");
+                    filter = input.value.toUpperCase();
+                    div = document.querySelector("#newGroupChatForm");
+                    container = document.getElementsByClassName("itemContainer")
+                    label = div.getElementsByTagName("label");
+                    for (i = 0; i < label.length; i++) {
+                        txtValue = label[i].textContent || label[i].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        container[i].style.display = "flex";
+                        } else {
+                        container[i].style.display = "none";
+                        }
+                    }
+                }
+                let input = document.querySelector("#search")
+                input.addEventListener('keyup', () => {
+                    filterFunc()
+                })
+            </script> 
+          </li>
+        <% } %> 
+      </ul>
+      <% if(!currentUser) { %> 
+      <a class="btn btn-outline-light" href="/login">Login</a>
+      <% } else if(currentUser) { %>
+        <form class="my-auto" action="/logout" method="POST">
+          <button class="btn btn-outline-light">Logout</button>
+        </form>
+      <% } %> 
+    </div>
+  </div>
+</nav>

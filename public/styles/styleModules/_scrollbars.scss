@@ -1,0 +1,55 @@
+// General ScrollBar
+::-webkit-scrollbar {
+    width: .7vw;
+}
+
+// General ScrollBar Thumb
+::-webkit-scrollbar-thumb {
+    background-color: black;
+}
+
+// General ScrollBar Track
+::-webkit-scrollbar-track {
+    background-color: $secondary;
+}
+
+// Groupchat Results Scrollbar
+.newGroupChatForm::-webkit-scrollbar {
+    width: .4vw;
+}
+
+// Groupchat Results Scrollbar Track
+.newGroupChatForm::-webkit-scrollbar-track {
+    background-color: gray;
+}
+
+// Groupchat Results Scrollbar Thumb
+.newGroupChatForm::-webkit-scrollbar-thumb {
+    background-color: black;
+}
+
+// Groupchat Results Scrollbar Thumb
+.newGroupChatForm::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(163, 163, 163);
+}
+
+// King Side Bar Scrollbar
+.kingSideBarScroll::-webkit-scrollbar {
+    width: .2vw;
+    // display: none;
+}
+
+// Reappears scrollbar on box hover
+.kingSideBarScroll:hover .kingSideBarScroll::-webkit-scrollbar {
+    display: flex !important;
+} 
+
+// King Side Bar Scrollbar Track
+.newGroupChatForm::-webkit-scrollbar-track {
+    background-color: gray;
+}
+
+// King Side Bar Scrollbar Thumb
+.newGroupChatForm::-webkit-scrollbar-thumb {
+    background-color: black;
+}

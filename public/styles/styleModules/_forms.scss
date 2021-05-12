@@ -1,0 +1,373 @@
+// Add Friend Form (contains buttons)
+.addFriendForm {
+    position: absolute;
+
+    float: right;
+
+    align-self: flex-end;
+
+    margin-top: -7px;
+    margin-right: 10px;
+
+}
+
+// Add Friend Button
+.addFriendButton {  
+    padding: 0;
+    border: solid 0;
+
+    width: fit-content;
+    height: fit-content;
+
+    font-size: 1.4vw;
+
+    color: rgb(0, 0, 202);
+
+    background-color: transparent;
+
+    transition: .3s;
+}
+
+// Add Friend Button Hover
+.addFriendButton:hover {
+
+    color: blue;
+
+}
+
+//
+//
+//
+
+// MessageText Area Size
+.kingMainOverride__inputContainer__messageInputContainer__form textarea {
+    height: 100%;
+    width: 93%;
+
+    border: solid 0 transparent;
+
+    outline: none;
+
+    resize: none;
+}
+
+// Message Text Area Active
+.kingMainOverride__inputContainer__messageInputContainer__form textarea:active {
+    border: solid 0 transparent;
+    outline: none;
+}
+
+// Message Text Area Focus (Flashes On Click)
+.kingMainOverride__inputContainer__messageInputContainer__form textarea:focus {
+    border: solid 0 transparent;
+    outline: none;
+}
+
+// Send Message Button 
+.kingMainOverride__inputContainer__messageInputContainer__form button {
+    height: 100%;
+    width: 7%;
+
+    background-color: $primary;
+
+    color: white;
+
+    border: solid 0 transparent;
+    border-left: solid 2px black;
+}
+
+// Send Message Button Hover
+.kingMainOverride__inputContainer__messageInputContainer__form button:hover {
+    transition: .3s;
+    background-color: rgb(94, 22, 136);
+}
+
+//
+//
+//
+//
+//
+//
+
+// Show Form Button
+.showButton {
+    height: 5vh;
+}
+
+// The overarching div for the groupchatform
+.collapseDiv {
+    position: relative; 
+
+    width: 30vw;
+    /* Makes it posible to make contained elements position absolute and still layout properly */
+}
+
+// New Groupchat Form
+.newGroupChatForm {
+    position: absolute;
+    background-color: $primary;   
+
+    // margin-top: 1vh;
+
+    border: solid 4px black;
+
+    z-index: 1001;
+
+    width: 100%;
+    
+}
+
+// Results Container
+.searchQueryResults {
+    max-height: 21vh;
+    overflow-y: scroll;
+
+    border-bottom: solid 1px rgba(233, 233, 233, 0.3);
+}
+
+// Dividers
+.newGroupChatForm hr {
+    color: white;
+}
+
+// First Divider
+.newGroupChatForm hr:nth-of-type(1) {
+    // margin-top: 0;
+}
+
+// Results Container
+.itemContainer {
+    text-align: left;
+    position: relative;
+
+    display: flex;
+
+    padding: 0;
+
+    justify-content: start;
+}
+
+// Results Container Label
+.itemContainer label {
+    text-align: left;
+
+    margin-left: .5vw;
+
+    color: white;
+
+    max-width: 80%;
+
+    display: block;
+}
+
+// Not Sure Of functionality I assume a button to add the user as a friend.
+.addFriendFormSearchQuery {
+    position: absolute;
+
+    right: 30px;
+}
+
+// Add to group chat checkbox
+.itemContainer input {
+    position: absolute;
+
+    right: 5px;
+}
+
+// Submits form
+.addToGroupButton {
+    width: 10vw;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 1rem !important;
+}
+
+// Edits Transition
+.collapsing {
+    width: 0;
+    transition: 0s !important;
+}
+
+// Sets display to flex
+.display-flex {
+    display: flex !important;
+}
+
+//
+//
+//
+//
+//
+//
+
+//
+//
+//
+
+// Upgrade User to Admin Form(Contains Button)
+.upgradeUserForm {
+    position: absolute;
+
+    margin-top: 1vh;
+
+    align-self: flex-end;
+}
+
+// Upgrade User to Admin Button
+.upgradeUserButton {
+    padding: 0;
+
+    background-color: transparent;
+
+    color: white;
+
+    border: 0 solid;
+
+    transition: .1s;
+}
+
+// Upgrade User to Admin Button Hover
+.upgradeUserButton:hover {
+    color: #0d6efd;
+}
+
+//
+//
+//
+
+// Removes User from Group form(contains button) *Requires Admin
+.removeUserForm {
+    position: absolute;
+
+    margin-top: 1vh;
+    margin-right: 1.4vw;
+
+    align-self: flex-end;
+}
+
+// Removes User from Group Button *Requires Admin
+.removeUserButton {
+    padding: 0;
+
+    background-color: transparent;
+
+    color: white;
+
+    border: 0 solid;
+
+    transition: .1s;
+    transform: rotateZ(-90deg);
+}
+
+// Removes User from Group Button Hover *Requires Admin
+.removeUserButton:hover {
+    color: $delete;
+    transform: rotateZ(0deg);
+}
+
+//
+//
+//
+
+// Don't no where form is
+
+// Leave groupchat Button 
+.leaveGroupchatButton {
+    padding: 0;
+    border: solid 0;
+
+    background-color: transparent;
+
+    position: absolute;
+
+    right: 20px;
+
+    color: white;
+
+    transition: .1s;
+}
+
+// Leave groupchat Button Hover 
+.leaveGroupchatButton:hover {
+    color: $delete;
+}
+
+//
+//
+//
+
+// Delete Message Form (contains button)
+.messageDeleteForm {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+// Delete Message button
+.messageDeleteButton {
+    padding: 0;
+    border: solid 0;
+
+    position: relative;
+
+    color: $messageMenuButtons;
+
+    border-radius: 50%;
+
+    // margin-top: auto;
+    // margin-bottom: auto;
+
+    background-color: transparent;
+
+    z-index: 4;
+
+    transition: .2s;
+}
+
+// Delete Message button hover
+.messageDeleteButton:hover {
+    transition: .2s;
+
+    color: $delete;
+    filter: drop-shadow(0px 1px 20px $delete);
+}
+
+// Add user Insed Message Menu
+.userAddForm {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+// Default Styling for Message Menu Buttons
+.messageMenuButtons {
+    padding: 0;
+    border: solid 0;
+
+    position: relative;
+
+    color: $messageMenuButtons;
+
+    border-radius: 50%;
+
+    margin-right: 5px;
+    margin-left: 5px;
+
+    background-color: transparent;
+
+    z-index: 4;
+
+    transition: .2s;
+}
+
+// Add User inside Message Menu Button
+.userAddButton {
+    font-size: 1.3vw;
+}
+
+// Add User Inside Message Menu Button Hover
+.userAddButton:hover {
+    color: $userAdd;
+
+    filter: drop-shadow(0px 5px 20px $userAdd);
+}

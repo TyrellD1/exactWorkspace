@@ -1,0 +1,12 @@
+<%- include('partials/head') %>
+<body>
+    <div class="flex column">
+        <div class="flex column mx-auto alert alert-danger mt-5 errorContainer">
+            <h2 class="alert-heading mx-3"><%= err.statusCode %></h2>
+            <p class="mx-3 text-center"><%= err.message %></p>
+            <hr>
+            <p class="mx-auto text-center">If you need assistance please contact us at support@cryptoTrader.com</p>
+        </div>
+    </div>
+</body>
+</html>

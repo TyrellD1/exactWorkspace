@@ -1,0 +1,100 @@
+// all Members parentContainer
+.allMembersParentContainer {
+    margin-left: 700px;
+
+    width: fit-content;
+}
+
+// all Members Display Button
+.allMembersButton {
+    background-color: transparent;
+
+    position: absolute;
+
+    margin-top: -10.5px;
+    margin-left: 205px;
+
+    padding: 0;
+
+    border: solid 0;
+
+    color: white;
+
+    transition: .1s;
+}
+
+.allMembersButton:hover {
+    color: $primary;
+}
+
+// all Members Display Members Container
+.allMembersContainer {
+    position: absolute;
+
+    display: none;
+
+    width: fit-content;
+
+    white-space: nowrap;
+
+    background-color: $primary;
+
+    padding: 1vh 1vh;
+
+    border: solid 3px black;
+
+    margin-top: 22px;
+    right: -250px;
+
+    z-index: 1000;
+}
+
+// all Members Display Container
+.showAllMembersContainer {
+    display: flex;
+}
+
+// Make Admin PopUp Bubble
+.makeAdminBubble {
+    background-color: $secondary;
+    color: black;
+
+    position: absolute;
+
+    border-radius: 5px;
+
+    display: none;
+
+    font-size: 1vw;
+
+    background-color: white;
+
+    padding: .5vh .5vh;
+
+    border: solid 1px black;
+
+    align-self: flex-end;
+
+    margin-right: -50px;
+    margin-top: -34px;
+}
+
+// Make Admin Speech Bubble Dropdown
+.makeAdminBubble:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffffff;
+    border-bottom: 10px solid transparent;
+
+    right: 50%;
+    bottom: -20px;
+}
+
+.allMembersItems {
+    padding-right: 4vw;
+}

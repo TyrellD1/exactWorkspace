@@ -1,0 +1,10 @@
+<div class="d-flex flex-column kingSideBarTop">
+    <img class="kingSideBarTop__userImage" src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+    <% if(currentUser) { %> 
+    <h2 class="kingSideBarTop__userName mt-2"><%= currentUser.first %> <%= currentUser.last %></h2>
+    <% } %> 
+    <a class="updateUserLink" href="">Update User</a>
+    <form action="">
+        <button class="deleteUserLink">Delete User</button>
+    </form>
+</div>

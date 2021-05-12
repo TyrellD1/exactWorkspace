@@ -1,0 +1,21 @@
+// Makes position relatve
+.position-relative {
+    position: relative;
+}
+
+// Makes position absolute
+.position-absolute {
+    position: absolute;
+}
+
+// Negates any Transition
+.negateTransition {
+    transition: 0s !important;
+}
+
+// Represents groupchat FlashMessage
+.groupchatMessage {
+    position: absolute;
+    top: 0;
+    left: 50%;
+}

@@ -1,0 +1,86 @@
+// Overarching Main Container
+.kingContainer {
+    width: 100vw;
+}
+
+// King Side Bar Full Scale
+.kingSideBar_general {
+    width: 16vw;
+    height: 100vh; 
+
+    background-color: $primary;
+}
+
+// Main Column Asside from SideBar
+.kingMainOverride, .kingMainOverride__inputContainer, .kingMainOverride__inputContainerHome {
+    width: 84vw;
+} 
+
+// Main Column Input Container Full Height
+.kingMainOverride__inputContainer {
+    height: 93vh;
+
+    justify-content: end;
+    
+    border: solid 5px black;
+}
+
+// Main Column Input Container Full Height Home Page
+.kingMainOverride__inputContainerHome {
+    height: 93vh;
+
+    justify-content: end;
+    
+    border: solid 5px black;
+    
+    background-color: white;
+}
+
+// Conversation or Groupchat title container
+.kingMainOverride__inputContainer__title {
+    height: 6vh;
+    border-bottom: solid 5px black;
+
+    margin-left: 0;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: $secondary;
+
+    color: white;
+
+    font-size: 1.4vw;
+}
+
+// Contains all the messages
+.kingMainOverride__messageContainer {
+    height: 83vh;
+
+    padding: 3.5vh 2vw;
+    
+
+    align-items: flex-end;
+    
+
+    overflow-y: scroll;
+
+    flex-direction: column-reverse;
+
+    background-color: rgb(211, 211, 211);
+
+    border-bottom: solid 5px black;
+}
+
+// Type Messages Box Container
+.kingMainOverride__inputContainer__messageInputContainer {
+    height: 4vh;
+
+    background-color: rgb(219, 219, 219);
+}
+
+// Send Messages Form (Containers Form Items)
+.kingMainOverride__inputContainer__messageInputContainer__form {
+    height: 100%;
+    width: 100%;
+}

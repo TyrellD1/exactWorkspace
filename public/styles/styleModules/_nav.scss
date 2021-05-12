@@ -1,0 +1,28 @@
+// Whole NavBar
+.navbar {
+    background-color: $primary;
+    min-height: 7vh;
+    max-height: 7vh;
+
+    border: solid 5px black;
+
+    border-top: solid 0 transparent;
+    border-bottom: solid 0 transparent;
+}
+
+// Show groupchat button
+.showButton {
+    padding: 0;
+    border: solid 0 transparent;
+
+    margin: 0;
+
+    color: white;
+
+    background-color: transparent;
+}
+
+// Show groupchat button Hover
+.showButton:hover {
+    color: white;
+}

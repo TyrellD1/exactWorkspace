@@ -1,0 +1,21 @@
+<%- include('partials/head') %> 
+<body>
+    <div class="d-flex flex-row kingContainer">
+        <div class="kingSideBar_general d-flex flex-column">
+            <%- include('partials/kingSideBarPartials/kingSideBarTop') %> 
+            <div class="d-flex flex-column kingSideBarScroll">
+                <div class="d-flex flex-column kingSideBarConversations__container">
+                    <%- include('partials/kingSideBarPartials/kingSideBarConversations') %> 
+                    <%- include('partials/kingSideBarPartials/kingSideBarGroupchats') %> 
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column kingMainOverride">
+            <%- include('partials/nav') %>
+            <div class="d-flex flex-column kingMainOverride__inputContainerHome">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

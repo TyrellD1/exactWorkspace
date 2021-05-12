@@ -1,0 +1,9 @@
+<h2 class="kingSideBarTitle">Members</h2> 
+<% for(user of users) { %> 
+    <div class="d-flex flex-column userContainer">
+        <p class="users text-break"><%= user.first %> <%= user.last %></p>
+        <form class="d-flex flex-row h-100 addFriendForm" action="/addFriend/<%= user._id %>" method="POST">
+            <button class="addFriendButton my-auto mx-auto"><i class="far fa-plus-square"></i></button>
+        </form>
+    </div>
+<% } %> 

@@ -1,0 +1,16 @@
+<h2 class="kingSideBarTitle">Conversations</h2>
+<% if(currentUser) { %> 
+    <% for(conversation of currentUser.conversations) { %> 
+        <div class="d-flex flex-row">
+            <a class="d-flex flex-row" href="/conversation/<%= conversation._id %>">
+                <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="img">
+                <% if(currentUser.username === conversation.user1.user.username) { %> 
+                    <p><%= conversation.user2.user.first %> <%= conversation.user2.user.last %> </p>
+                <% } %> 
+                <% if(currentUser.username === conversation.user2.user.username) { %> 
+                    <p><%= conversation.user1.user.first %> <%= conversation.user1.user.last %> </p>
+                <% } %> 
+            </a>
+        </div>
+    <% } %>
+<% } %>  

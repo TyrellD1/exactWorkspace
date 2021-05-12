@@ -1,0 +1,846 @@
+// Root Colors
+
+$primary: rgb(51, 14, 68);
+$secondary: rgb(71, 71, 71);
+
+$userAdd: blue;
+$delete: rgb(182, 0, 0);
+
+$secondaryHover: rgb(97, 97, 97);
+
+$sentColor : rgb(132, 30, 190);
+$recievedColor : rgb(196, 190, 190);
+
+$messageMenu: rgb(170, 170, 170);
+$messageMenuHover: rgb(87, 87, 87);
+$messageMenuButtons: rgb(170, 170, 170);
+
+// Root Colors
+
+// Imports Start
+@import "styleModules/general";
+@import "styleModules/nav";
+@import "styleModules/kingSideBarScroll";
+@import "styleModules/forms";
+@import "styleModules/kingSideBar";
+@import "styleModules/kingSideBarTop";
+@import "styleModules/allMembers";
+@import "styleModules/overArchingContainers";
+@import "styleModules/scrollbars";
+@import "styleModules/messages";
+@import "styleModules/convoTitle";
+// Imports End
+
+body {
+    background-color: $secondary;
+
+    overflow-y: hidden;
+
+    box-sizing: border-box;
+}
+
+// Partials
+
+// .groupchatMessage {
+//     position: absolute;
+//     top: 0;                  General
+//     left: 50%;
+// }
+
+// Partials End
+
+// .position-relative {
+//     position: relative;
+// }                            General
+
+// .position-absolute {
+//     position: absolute;
+// }
+
+// .nav-link-button {
+//     background-color: transparent;   Nav
+//     border: 0 solid transparent;
+// }
+
+// .addFriendForm {
+//     position: absolute;
+
+//     float: right;
+
+//     align-self: flex-end;  Add Friends Form
+
+//     margin-top: -7px;
+//     margin-right: 10px;
+
+// }
+
+// .addFriendButton {  
+//     padding: 0;
+//     border: solid 0;
+
+//     width: fit-content;
+//     height: fit-content;
+
+//     font-size: 1.4vw;
+
+//     color: rgb(0, 0, 202);
+
+//     background-color: transparent;
+
+//     transition: .3s;
+// }
+
+// .addFriendButton:hover {
+
+//     color: blue;
+
+// }
+
+// Adding Friends End
+
+// .kingSideBar_general {
+//     width: 22vw;             kingSideBarScroll
+//     height: 100vh; 
+
+//     background-color: $primary;
+// }
+
+// .kingSideBarTop {
+//     padding: 2vh;
+//     padding-bottom: 0;
+
+//     color: white;
+
+//     border: solid 5px rgb(0, 0, 0);
+//     border-top: solid 0 transparent;             kingSideBarTop
+//     border-left: solid 0 transparent;
+//     border-right: solid 0 transparent;
+
+//     min-height: 30vh;
+//     max-height: 30vh;
+// }
+
+// .kingSideBarTop__userImage {
+//     width: 90px;
+//     height: 90px;
+
+//     border: solid 5px rgb(35, 4, 53);
+
+//     border-radius: 50%;
+// }
+
+// .kingSideBarTop__userName {
+//     font-size: 1.3vw;
+// }
+
+// .kingSideBarScroll {
+//     padding: 1vh 1vw;            kingSideBarScroll
+//     min-height: 70vh;
+// }
+
+// .kingSideBarConversations__container 
+
+
+
+// .kingSideBarConversations__container div {
+//     background-color: $secondary;
+//     margin-bottom: .5vh;
+
+//     border-radius: 5px;
+// }
+
+// .kingSideBarConversations__container a {         kingSideBarScroll
+//     // width: fit-content;
+//     height: 4vh;
+
+//     margin-bottom: .4vh;
+
+//     border-radius: 5px;
+
+//     align-items: center;
+//     align-content: center;
+//     // margin-top: 0;
+//     // margin-bottom: 0;
+
+//     background-color: $secondary;
+
+//     color: white;
+//     text-decoration: none;
+// }
+
+// .kingSideBarConversations__container a:hover {
+//     background-color: $secondaryHover;
+//     text-decoration: underline;
+// }
+
+// .kingSideBarConversations__container img {
+//     width: 25px;
+//     height: 25px;
+
+//     margin-left: .4vw;
+
+//     border: solid 2px rgb(35, 4, 53);
+//     border-radius: 50%;
+// }
+
+// .kingSideBarConversations__container p {
+//     color: white;
+
+//     margin-top: auto;
+//     margin-bottom: auto;
+
+//     margin-left: .5vw;
+// }
+
+/* Universals Start */
+
+// .updateUserLink {
+//     color: white;
+//     text-decoration: none;
+
+//     width: fit-content;
+// }
+
+// .updateUserLink:hover {
+//     color: white;
+//     text-decoration: underline;          kingSideBarTop
+// }
+
+// .deleteUserLink {
+//     padding: 0;
+//     border: solid 0 transparent;
+
+//     margin: 0;
+
+//     color: white;
+
+//     background-color: transparent;
+// }
+
+// .deleteUserLink:hover {
+//     color: white;
+//     text-decoration: underline;
+// }
+
+// .showButton {
+//     padding: 0;
+//     border: solid 0 transparent;         Shows Create New Group Chat
+
+//     margin: 0;
+
+//     color: white;
+
+//     background-color: transparent;
+// }
+
+// .showButton:hover {
+//     color: white;
+// }
+
+// .kingContainer {        overArchingContainers 
+//     width: 100vw;
+// }
+
+// .kingMainOverride {
+//     width: 78vw;
+// } 
+
+// .navbar {
+//     background-color: $primary;
+//     min-height: 7vh;
+//     max-height: 7vh;             Nav
+
+//     border: solid 5px black;
+
+//     border-top: solid 0 transparent;
+//     border-bottom: solid 0 transparent;
+// }
+
+// .messageContainer {
+//     width: fit-content;
+
+//     display: flex;
+//     flex-direction: column;
+
+//     max-width: 55%;
+
+//     position: relative;
+
+//     border-radius: 5px;
+
+//     margin-top: 3.5vh;
+//     /* margin-bottom: 2.5vh; */
+
+//     padding: 1.5vh 2vw;
+// }
+
+// .messageContainer img {
+//     width: 35px;
+//     height: 35px;
+
+//     border: solid 2px rgb(35, 4, 53);            messages
+//     border-radius: 50%;
+
+//     position: absolute;
+
+//     margin-left: -47.5px;
+//     margin-top: -25px;    
+// }
+
+// .messageContainer p {
+//     position: absolute;
+
+//     margin-top: -31px;
+//     margin-left: -10px;
+    
+//     font-size: .85vw;
+
+//     color: rgb(175, 174, 174);
+// }
+
+// .sentMessageContainer {
+//     background-color: $sentColor;
+
+//     color: white;
+// }
+
+// .recievedMessageContainer {
+//     background-color: $recievedColor;
+
+//     color: rgb(0, 0, 0);
+//     align-self: end;
+// }
+
+// .negateTransition {
+//     transition: 0s !important;       General
+// }
+
+/* Universals End */
+
+// .kingMainOverride__inputContainer {
+//     height: 93vh;
+//     width: 78vw;
+
+//     justify-content: end;
+    
+//     border: solid 5px black;
+// }
+
+// .kingMainOverride__inputContainerHome {         overArchingContainers
+//     height: 93vh;
+//     width: 78vw;
+
+//     justify-content: end;
+    
+//     border: solid 5px black;
+    
+//     background-color: white;
+// }
+
+// .kingMainOverride__inputContainer__title {
+//     height: 6vh;
+//     border-bottom: solid 5px black;
+
+//     justify-content: center;
+//     align-items: center;
+
+//     background-color: $secondary;
+
+//     color: white;
+
+//     font-size: 1.4vw;
+// }
+
+// .kingMainOverride__messageContainer {            overArchingContainers
+//     height: 83vh;
+
+//     padding: 3.5vh 2vw;
+    
+
+//     align-items: flex-end;
+    
+
+//     overflow-y: scroll;
+
+//     flex-direction: column-reverse;
+
+//     background-color: rgb(211, 211, 211);
+
+//     border-bottom: solid 5px black;
+// }
+
+
+
+/* .kingMainOverride__messageContainer > :nth-child(2) {
+    margin-bottom: 2.5vh !important;
+} */
+
+// .kingMainOverride__inputContainer__messageInputContainer {
+//     height: 4vh;
+
+//     background-color: rgb(219, 219, 219);                overArchingContainers
+// }
+
+// .kingMainOverride__inputContainer__messageInputContainer__form {
+//     height: 100%;
+//     width: 100%;
+// }
+
+// .kingMainOverride__inputContainer__messageInputContainer__form textarea {
+//     height: 100%;
+//     width: 93%;
+
+//     border: solid 0 transparent;
+
+//     outline: none;
+
+//     resize: none;
+// }
+
+// .kingMainOverride__inputContainer__messageInputContainer__form textarea:active {             Forms
+//     border: solid 0 transparent;
+//     outline: none;
+// }
+
+// .kingMainOverride__inputContainer__messageInputContainer__form textarea:focus {
+//     border: solid 0 transparent;
+//     outline: none;
+// }
+
+// .kingMainOverride__inputContainer__messageInputContainer__form button {
+//     height: 100%;
+//     width: 7%;
+
+//     background-color: $primary;
+
+//     color: white;
+
+//     border: solid 0 transparent;
+//     border-left: solid 2px black;
+// }
+
+// .kingMainOverride__inputContainer__messageInputContainer__form button:hover {
+//     transition: .3s;
+//     background-color: rgb(58, 12, 85);
+// }
+
+/* Universals end */
+
+/* kingSideBar specific scroll bar Start */
+
+// .kingSideBarScroll {
+//     overflow-y: scroll;          kingSideBarScroll
+// }
+
+/* kingSideBar specific scroll bar End */
+
+/* General scroll bar Start */
+
+// ::-webkit-scrollbar {
+//     width: .7vw;
+// }
+
+// ::-webkit-scrollbar-thumb {          scrollbars
+//     background-color: black;
+// }
+
+// ::-webkit-scrollbar-track {
+//     background-color: $secondary;
+// }
+
+/* General scroll bar End */
+
+// Search bar form
+
+// .showButton {
+//     height: 5vh;
+// }
+
+// .collapseDiv {
+//     position: relative; 
+
+//     width: 30vw;
+//     /* Makes it posible to make contained elements position absolute and still layout properly */
+// }
+
+// .newGroupChatForm {
+//     position: absolute;
+//     background-color: $primary;                  Forms
+
+//     // margin-top: 1vh;
+
+//     border: solid 4px black;
+
+//     z-index: 1001;
+
+//     width: 100%;
+    
+// }
+
+// .searchQueryResults {
+//     max-height: 21vh;
+//     overflow-y: scroll;
+
+//     border-bottom: solid 1px rgba(233, 233, 233, 0.3);
+// }
+
+// .newGroupChatForm hr {
+//     color: white;
+// }
+
+// .newGroupChatForm hr:nth-of-type(1) {
+//     // margin-top: 0;
+// }
+
+// .itemContainer {
+//     text-align: left;
+//     position: relative;
+
+//     display: flex;
+
+//     padding: 0;
+
+//     justify-content: start;
+// }
+
+// .itemContainer label {
+//     text-align: left;
+
+//     margin-left: .5vw;
+
+//     color: white;
+
+//     max-width: 80%;
+
+//     display: block;
+// }
+
+// .addFriendFormSearchQuery {
+//     position: absolute;
+
+//     right: 30px;
+// }
+
+// .itemContainer input {
+//     position: absolute;
+
+//     right: 5px;
+// }
+
+// .newGroupChatForm::-webkit-scrollbar {
+//     width: .4vw;
+// }
+
+// .newGroupChatForm::-webkit-scrollbar-track {         Scroll Bars
+//     background-color: gray;
+// }
+
+// .newGroupChatForm::-webkit-scrollbar-thumb {
+//     background-color: black;
+// }
+
+// .addToGroupButton {
+//     width: 10vw;
+
+//     margin-left: auto;
+//     margin-right: auto;
+
+//     margin-bottom: 1rem !important;          forms
+// }
+
+// .collapsing {
+//     width: 0;
+//     transition: 0s !important;
+// }
+
+// .display-flex {
+//     display: flex !important;
+// }
+
+// Group Chat
+// Group Chat Styles Start
+// Group Chat
+
+// All Members Dropdown Start
+
+// .allMembersParentContainer {
+//     margin-left: 700px;
+
+//     width: fit-content;
+// }
+
+// .allMembersButton {
+//     background-color: transparent;
+
+//     text-align: left;
+
+//     padding: 0;
+
+//     border: solid 0;
+
+//     color: white;
+// }
+
+// .allMembersContainer {
+//     position: absolute;
+
+//     display: none;
+
+//     width: 200px;
+
+//     background-color: $primary;              allMembers
+
+//     padding: 1vh 1vh;
+
+//     border: solid 3px black;
+
+//     margin-top: 41px;
+
+//     // transition: .4s ease;
+//     // transition-property: height;
+// }
+
+// .showAllMembersContainer {
+//     display: flex;
+// }
+
+// .makeAdminBubble {
+//     background-color: $secondary;
+//     color: black;
+
+//     position: absolute;
+
+//     border-radius: 5px;
+
+//     display: none;
+
+//     font-size: 1vw;
+
+//     background-color: white;
+
+//     padding: .5vh .5vh;
+
+//     border: solid 1px black;
+
+//     align-self: flex-end;
+
+//     margin-right: -50px;
+//     margin-top: -34px;
+// }
+
+// // Make Adming Bubble
+// .makeAdminBubble:before {
+//     content: "";
+//     width: 0px;
+//     height: 0px;
+//     position: absolute;
+
+//     border-left: 10px solid transparent;
+//     border-right: 10px solid transparent;
+//     border-top: 10px solid #ffffff;
+//     border-bottom: 10px solid transparent;
+
+//     right: 50%;
+//     bottom: -20px;
+// }
+
+// .upgradeUserForm {
+//     position: absolute;
+
+//     margin-top: 1vh;
+
+//     align-self: flex-end;
+// }
+
+// .upgradeUserButton {
+//     padding: 0;
+
+//     background-color: transparent;
+
+//     color: white;
+
+//     border: 0 solid;
+
+//     transition: .1s;
+// }
+
+// .upgradeUserButton:hover {           Forms
+//     color: #0d6efd;
+// }
+
+// .removeUserForm {
+//     position: absolute;
+
+//     margin-top: 1vh;
+//     margin-right: 1.4vw;
+
+//     align-self: flex-end;
+// }
+
+// .removeUserButton {
+//     padding: 0;
+
+//     background-color: transparent;
+
+//     color: white;
+
+//     border: 0 solid;
+
+//     transition: .1s;
+//     transform: rotateZ(-90deg);
+// }
+
+// .removeUserButton:hover {
+//     color: $delete;
+//     transform: rotateZ(0deg);
+// }
+
+// Leave Groupchat Start
+
+// .leaveGroupchatButton {
+//     padding: 0;
+//     border: solid 0;
+
+//     background-color: transparent;
+
+//     position: absolute;
+
+//     right: 10px;                         forms
+
+//     color: white;
+
+//     transition: .1s;
+// }
+
+// .leaveGroupchatButton:hover {
+//     color: $delete;
+// }
+
+// All Members Dropdown End
+
+// Group Chat
+// Group Chat Styles End
+// Group Chat
+
+// All Message Menu
+
+// Message Menu Container
+
+// .messageMenuContainer {
+//     display: none;
+
+//     background-color: white;
+    
+//     border-radius: 4px;
+
+//     border: solid 4px black;
+
+//     padding: .4vh 1vw;
+
+//     font-size: 1.5vw;
+
+//     position: absolute;
+
+//     top: -57px;
+//     right: -23px;
+
+//     align-self: flex-end;
+
+//     z-index: 2;
+// }
+
+// .messageMenuContainer:before {
+//     content: "";                                     messsages
+//     width: 0px;
+//     height: 0px;
+//     position: absolute;
+
+//     border-left: 7.5px solid transparent;
+//     border-right: 7.5px solid transparent;
+//     border-top: 7.5px solid #ffffff;
+//     border-bottom: 7.5px solid transparent;
+
+//     right: 50%;
+//     bottom: -14px;
+
+//     z-index: 3;
+// }
+
+// .messageMenuContainer:after {
+//     content: "";
+//     width: 0px;
+//     height: 0px;
+//     position: absolute;
+
+//     border-left: 7.5px solid transparent;
+//     border-right: 7.5px solid transparent;
+//     border-top: 7.5px solid #000000;
+//     border-bottom: 7.5px solid transparent;
+
+//     right: 50%;
+//     bottom: -19px;
+
+//     z-index: 1;
+// }
+
+// .messageDeleteForm {
+//     margin-top: auto;
+//     margin-bottom: auto;
+// }
+
+// .messageDeleteButton {
+//     padding: 0;
+//     border: solid 0;
+
+//     position: relative;
+
+//     color: $messageMenuButtons;              forms
+
+//     border-radius: 50%;
+
+//     // margin-top: auto;
+//     // margin-bottom: auto;
+
+//     background-color: transparent;
+
+//     z-index: 4;
+
+//     transition: .2s;
+// }
+
+// .messageDeleteButton:hover {
+//     transition: .2s;
+
+//     color: $delete;
+//     filter: drop-shadow(0px 1px 20px $delete);
+
+//     // transform: translateY(-.1rem);
+// }
+
+// Message Menu Container
+
+// .messageMenuButton {
+//     position: absolute;
+//     background-color: $messageMenu;
+
+//     align-self: flex-end;
+
+//     top: 18px;
+//     right: 6px;
+
+//     // margin-left: 1vw;                 messages
+
+//     padding: 0 .3vh;
+
+//     color: black !important;
+
+//     cursor: pointer;
+// }
+
+// .messageMenu:hover {
+//     background-color: $messageMenuHover;
+// }
+
+// .bubbleShow {
+//     display: flex;
+// }

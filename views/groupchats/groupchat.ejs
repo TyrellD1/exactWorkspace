@@ -1,0 +1,118 @@
+<%- include('../partials/head') %> 
+<body>
+    <div class="d-flex flex-row kingContainer">
+        <div class="kingSideBar_general d-flex flex-column">
+            <%- include('../partials/kingSideBarPartials/kingSideBarTop') %> 
+            <div class="d-flex flex-column kingSideBarScroll">
+                <div class="d-flex flex-column kingSideBarConversations__container">
+                    <%- include('../partials/kingSideBarPartials/kingSideBarConversations') %> 
+                    <%- include('../partials/kingSideBarPartials/kingSideBarGroupchats') %> 
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column kingMainOverride">
+            <%- include('../partials/nav') %>
+            <% if(success && success.length) { %> 
+                <div class="alert alert-success alert-dismissible fade show groupchatMessage mt-3 mx-auto" role="alert">
+                    <%= success %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% } %> 
+            
+            <% if(error && error.length) { %> 
+                <div class="alert alert-danger alert-dismissible fade show groupchatMessage mt-3 mx-auto" role="alert">
+                    <%= error %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% } %> 
+            <div class="d-flex flex-column kingMainOverride__inputContainerHome">
+                <div class="d-flex flex-row kingMainOverride__inputContainer__title justify-content-center">
+                    <img class="convoTitleImg me-2" src="https://images.unsplash.com/photo-1588358400440-12ca21f5f180?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWVvd3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="titleImg">
+                    <%= groupchat.name %>
+                    <div class="d-flex flex-column allMembersParentContainer position-absolute">
+                        <button id="allMembersButton" class="allMembersButton"><i class="fas fa-users"></i></button>  
+                        <div id="allMembersContainer" class="flex-column allMembersContainer">
+                            <% for(user of groupchat.members) { %>
+                            <div class="d-flex flex-column">
+                                <p class="allMembersItems"><%= user.first %> <%= user.last %></p>
+                                <!-- <p>piano</p> -->
+                                <% if(currentUser.username === groupchat.admin.username) { %> 
+                                    <p id="makeAdminBubble<%= user._id %>" class="makeAdminBubble">Make Admin</p>
+                                    <form class="d-flex upgradeUserForm" action="/makeAdmin/<%= user._id %>/<%= groupchat._id %>?_method=PUT" method="POST">
+                                        <button id="upgradeUserButton<%= user._id %>" class="upgradeUserButton my-auto"><i class="fas fa-caret-square-up"></i></button>
+                                    </form>
+                                    <% if(user.username !== groupchat.admin.username) { %> 
+                                    <form class="d-flex removeUserForm" action="/removeUser/<%= user._id %>/<%= groupchat._id %>?_method=PUT" method="POST">
+                                        <button class="removeUserButton"><i class="fas fa-minus-square"></i></button>
+                                    </form>
+                                    <% } %> 
+                                    <script>
+                                        document.querySelector('#upgradeUserButton<%= user._id %>').addEventListener('mouseenter', () => {
+                                            document.querySelector('#makeAdminBubble<%= user._id %>').classList.toggle('bubbleShow')
+                                        })
+                                        document.querySelector('#upgradeUserButton<%= user._id %>').addEventListener('mouseout', () => {
+                                            document.querySelector('#makeAdminBubble<%= user._id %>').classList.toggle('bubbleShow')
+                                        })
+                                    </script>
+                                <% } %> 
+                            </div>
+                            <% } %> 
+                        </div>
+                    </div>
+                    <form class="d-flex leaveGroupchatForm" action="/leaveGroupchat/<%= groupchat._id %>?_method=PUT" method="POST">
+                        <button class="leaveGroupchatButton"><i class="far fa-times-circle"></i></button>
+                    </form>
+                    <script>
+                        let button, container;
+                        button = document.querySelector('#allMembersButton');
+                        container = document.querySelector('#allMembersContainer');
+                        button.addEventListener('click', () => {
+                            container.classList.toggle('showAllMembersContainer')
+                        })
+                    </script>
+                </div>
+                <div class="d-flex kingMainOverride__messageContainer">
+                    <% for(message of groupchat.messages) { %> 
+                        <div class=" messageContainer
+                        <% if(currentUser.username === message.from.username) { %> 
+                            sentMessageContainer text-break">
+                        <% } else if(currentUser.username !== message.from.username) { %> 
+                            recievedMessageContainer text-break">
+                        <% } %> 
+                            <div id="messageMenuContainer<%= message._id %>" class="flex-row messageMenuContainer">
+                                <form class="userAddForm" action="/addFriend/<%= message.from._id %>" method="POST">
+                                    <button id="userAddButton<%= message._id %>" class="userAddButton messageMenuButtons"><i class="fas fa-user-plus"></i></button>
+                                </form>
+                                <form class="messageDeleteForm" action="/deleteMessage/<%= message._id %>/<%= groupchat._id %>?_method=DELETE" method="POST">
+                                    <button id="messageDeleteButton<%= message._id %>" class="messageDeleteButton"><i class="far fa-times-circle"></i></button>
+                                </form>
+                            </div>
+                            <p id="messageMenuButton<%= message._id %>" class="messageMenuButton"><i class="fas fa-ellipsis-h"></i></p>
+                            <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                            <p><%= message.from.first %> <%= message.from.last %></p>
+                            <%= message.message %> 
+                        </div>
+                        <script>
+                            document.querySelector('#messageMenuButton<%= message._id %>').addEventListener('mouseover', () => {
+                                document.querySelector('#messageMenuContainer<%= message._id %>').classList.toggle('bubbleShow')
+                            })
+                            document.querySelector('#messageDeleteButton<%= message._id %>').addEventListener('mouseover', () => {
+                                document.querySelector('#messageMenuContainer<%= message._id %>').classList.toggle('bubbleShow')
+                            })
+                            document.querySelector('#messageMenuContainer<%= message._id %>').addEventListener('mouseout', () => {
+                                document.querySelector('#messageMenuContainer<%= message._id %>').classList.toggle('bubbleShow')
+                            })
+                        </script>
+                    <% } %> 
+                </div>
+                <div class="d-flex flex-row kingMainOverride__inputContainer__messageInputContainer">
+                    <form class="d-flex flex-row kingMainOverride__inputContainer__messageInputContainer__form" action="/sendGcMessage/<%= groupchat._id %>" method="POST">
+                        <textarea class="px-2" placeholder="hey.." maxlength="1000" name="message" id="message"></textarea>
+                        <button >Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
